@@ -1,0 +1,6 @@
+%h1 Lista wypowiedzi
+%ul
+  -@statements.each do |statement|
+    %li
+      =statement.author
+      =link_to "Pokaż", statement_path(statement.id)

@@ -1,0 +1,10 @@
+<h1> Edytuj wypowiedz </h1>
+
+<%= form_for(@statement) do |f| %>
+  <% @statement.errors.full_messages.each do |err| %> 
+    <li><%= err %></li> 
+  <% end %>
+  <%= f.label "Twoja wypowiedz" %>
+  <%= f.text_field :post %>
+  <%= f.submit "Save me!" %>
+<% end %>
