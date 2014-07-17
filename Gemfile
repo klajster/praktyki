@@ -40,3 +40,6 @@ gem 'spring',        group: :development
 
 gem 'devise'
 gem 'haml'
+
+
+gem 'rails_12factor', group: :production
