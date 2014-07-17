@@ -1,0 +1,9 @@
+<% if current_user %>
+  <h1>Cześć <%= current_user.email %></h1>
+  <%= link_to "twoj panel", user_path(current_user.id) %>
+  <%= link_to "wyloguj sie", destroy_user_session_path, method: :delete %>
+<% else %>
+  <h1>Cześć nieznajomy</h1>
+  <%= link_to "zarejestruj sie!", new_user_registration_path %>
+  <%= link_to "zaloguj sie!", new_user_session_path %>
+<% end %>

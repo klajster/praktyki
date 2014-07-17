@@ -1,0 +1,12 @@
+%h1 panel usera
+%h3=@user.email
+=link_to "strona główna", root_path
+=link_to "dodaj wypowiedz", new_statement_path
+%hr
+%ul
+  -@user.statements.each do |statement|
+    %li
+      =statement.author
+      =link_to "pokaz", statement_path(statement.id)
+     
+      

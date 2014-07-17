@@ -1,5 +1,5 @@
 class AddColumnAgeToStatement < ActiveRecord::Migration
   def change
-  	add_column :statemets, :age, :integer
+  	add_column :statements, :age, :integer
   end
 end

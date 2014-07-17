@@ -1,0 +1,16 @@
+!!!
+%html
+  %head
+    %title Training
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    %div
+      - if alert
+        %p
+          Uwaga: #{alert}
+      - elsif notice
+        %p
+          Spokojnie: #{notice}
+    = yield
