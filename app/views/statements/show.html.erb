@@ -1,2 +1,6 @@
 <h1><%= @statement.author %></h1>
+</br><%= link_to "strona główna", root_path %> </br>
+<%= @statement.post %>
 <%= link_to "Usuń", statement_path(@statement.id), method: :delete %>
+<%= link_to "Edytuj", edit_statement_path %>
+

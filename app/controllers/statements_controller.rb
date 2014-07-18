@@ -24,7 +24,7 @@ class StatementsController < ApplicationController
 
 
 		def create
-			@statementl=Statement.new(statement_params)
+			@statement=Statement.new(statement_params)
 
 			if @statement.save
 				redirect_to statements_path, notice: "Created"
@@ -41,7 +41,7 @@ class StatementsController < ApplicationController
 		def update
 			@statement=Statement.find(params[:id])
 
-			if @statement=Statement.find(params[:id])
+			if @statement.update_attributes(statement_params)
 				redirect_to statements_path, notice: "Edited"
 			end
 		end
@@ -49,8 +49,8 @@ class StatementsController < ApplicationController
 
 		private
 		def statement_params
-			params.require(:statement).permit(:author, :age, :user_id)
+			params.require(:statement).permit(:author, :post, :age, :user_id)
 		end
 
 
-		
+	end	

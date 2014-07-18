@@ -1,11 +1,17 @@
-<h1> Dodaj wypowiedz </h1>
+<h1> Dodaj autora </h1>
 
 <%= form_for(@statement) do |f| %>
   <% @statement.errors.full_messages.each do |err| %> 
     <li><%= err %></li> 
   <% end %>
-  <%= f.label :post %>
+  <%= f.label :author %>
+  <%= f.text_field :author %>
+    <%= f.label "Twoja wypowiedz:" %>
   <%= f.text_field :post %>
+    <%= f.label "Wiek autora:" %>
+  <%= f.text_field :age %>
+  
   <%= f.hidden_field :user_id, value: current_user.id %>
+
   <%= f.submit "Save me!" %>
 <% end %>
